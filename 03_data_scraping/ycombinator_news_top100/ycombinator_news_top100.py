@@ -6,8 +6,8 @@ def scrape_hacker_news():
     base_url = "https://news.ycombinator.com/news"
     all_articles = []
     
-    # Hacker News는 페이지당 약 30개의 기사를 보여줍니다.
-    # 100개 이상의 기사를 얻기 위해 4페이지까지 스크래핑합니다.
+    # Hacker News １페이지당 기사는 약 ３０개
+    # 100개 이상의 기사를 얻기 위해 4페이지까지 스크래핑
     for page_num in range(1, 5): 
         url = f"{base_url}?p={page_num}"
         print(f"Scraping {url}...")
@@ -21,8 +21,8 @@ def scrape_hacker_news():
 
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # 각 기사 항목을 찾습니다.
-        # Hacker News HTML 구조에 따라 'athing' 클래스를 가진 tr 태그가 기사 하나를 나타냅니다.
+        # 각 기사 항목을 찾기
+        # 'athing' 클래스를 가진 tr 태그가 기사 하나를 나타냅니다.
         articles = soup.find_all('tr', class_='athing')
         
         for article in articles:
@@ -58,7 +58,7 @@ def scrape_hacker_news():
                         time = time_tag.get_text(strip=True)
 
                 # 댓글 링크 찾기 (가장 마지막 a 태그)
-                # 댓글 수가 0일 경우 'discuss'만 있고 숫자가 없을 수 있습니다.
+                # 댓글 수가 0일 경우 'discuss'만 있고 숫자가 없을 수도 있음
                 comments_tags = subtext_row.find_all('a')
                 if comments_tags:
                     for tag in comments_tags:
@@ -67,7 +67,7 @@ def scrape_hacker_news():
                             break
 
             all_articles.append({
-                'Rank': len(all_articles) + 1,  # 순위는 스크래핑된 순서대로 부여합니다.
+                'Rank': len(all_articles) + 1,  # 순위는 스크래핑된 순서대로 부여
                 'Title': title,
                 'Link': link,
                 'Score': score,
