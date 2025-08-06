@@ -18,12 +18,6 @@
 - 파이썬 기반의 문제 해결 능력을 기초부터 실전까지 단계적으로 습득
 - 이후 프로젝트를 통해 모델링, 분석, 리포트 작성까지 경험
 
-## 📁 리포지토리 목록
-- [`coala-univ-practice-python`](https://github.com/username/coala-univ-practice-python) – 파이썬 실습 코드
-- [`coala-univ-titanic`](https://github.com/username/coala-univ-titanic) – 타이타닉 생존자 예측
-- [`coala-univ-flower-classification`](https://github.com/username/coala-univ-flower-classification) – 꽃 분류 모델
-- [`coala-univ-house-price`](https://github.com/username/coala-univ-house-price) – 워싱턴 집값 예측 프로젝트
-
 ## ✨ 활동 성과
 - 데이터 전처리, 시각화, 모델 구축까지 전과정 실습 경험
 - 팀 기반 프로젝트 협업 및 발표 진행
